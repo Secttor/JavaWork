@@ -1,23 +1,21 @@
 package org.example_4;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
-public class Person implements Comparable<Person>{
+public class Person implements Comparable<Person> {
     private String name;
     private int age;
-    Adress adress;
 
+    public List<Hobby> hobbies = new ArrayList<>();
 
     private Map<String, Person> rude = new HashMap<>();
 
-    public Person(String name, int age, Adress adress) {
+    public Person(String name, int age) {
         this.name = name;
         this.age = age;
-        this.adress = adress;
 
     }
+
 
     public int getAge() {
         return age;
@@ -63,8 +61,6 @@ public class Person implements Comparable<Person>{
     public int compareTo(Person o) {
         return this.name.compareTo(o.name);
     }
-
-
 
 }
 

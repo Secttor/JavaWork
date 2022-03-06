@@ -1,42 +1,61 @@
 package org.example_4;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
+/**
+ * Main class to printout names of persons and ages which were intially adeed to a TreeSet.
+ * Have been used Comparable in Person class
+ * Also used for a certain Person, print the name of the hobby and the adress where it can be practiced
+ */
 public class Main {
     public static void main(String[] args) {
-        /**
-         * Class to printout first names of persons and ages which were intially adeed to a TreeSet.
-         * Have been used Comparable
-         */
-            Set<Person> setOfPersons = new TreeSet<>();
-            setOfPersons.add(new Person("Kim", 24, new Adress("Belgium", "Europe", "Bruxelles", 220)));
-            setOfPersons.add(new Person("Alan", 20, new Adress("Italy", "Europe", "Rome", 11)));
-            setOfPersons.add(new Person("Tom", 11, new Adress("France", "Europe", "Paris", 12)));
 
-            for (Person person : setOfPersons) {
-                System.out.println(person);
+        Set<Person> setOfPerson = new TreeSet<>();
+        setOfPerson.add(new Person("Kim", 24));
+        setOfPerson.add(new Person("Alan", 20));
+        setOfPerson.add(new Person("Tom", 11));
 
-            }
-            System.out.println("===============");
-            Person person1 = new Person("Kim", 24, new Adress("Belgium", "Europe", "Bruxelles", 220));
-            Person person2 = new Person("Alan", 20, new Adress("Italy", "Europe", "Rome", 11));
-            Person person3 = new Person("Tom", 11, new Adress("France", "Europe", "Paris", 12));
-
-            System.out.println("Person name: " + person1.getName());
-            System.out.println("Address: " + person1.adress.country + " " + person1.adress.city + " " + person1.adress.region + " " + person1.adress.postalcode);
-
-            System.out.println("Person name: " + person2.getName());
-            System.out.println("Address: " + person2.adress.country + " " + person2.adress.city + " " + person2.adress.region + " " + person2.adress.postalcode);
-
-            System.out.println("Person name: " + person3.getName());
-            System.out.println("Address: " + person2.adress.country + " " + person2.adress.city + " " + person2.adress.region + " " + person2.adress.postalcode);
-
-            Map<Person, Adress> Adresses = new HashMap<>();
+        for (Person person : setOfPerson) {
+            System.out.println(person);
 
         }
+        System.out.println("===============");
+
+        Adress address1 = new Adress("Belgium", "Europe", "Bruxelles", 12);
+        Adress address2 = new Adress("France", "Europe", "Lyon", 1234);
+        Adress address3 = new Adress("Germany", "Europe", "Frankfurt", 8475);
+
+        Hobby swimming = new Hobby("swiming", 5, address1);
+        Hobby surfing = new Hobby("surfing", 3, address2);
+        Hobby running = new Hobby("running", 3, address3);
+
+        Set<Person> setOfPersons = new TreeSet<>();
+        setOfPersons.add(new Person("Alan", 20) {{
+            hobbies.add(swimming);
+            hobbies.add(running);
+        }});
+        setOfPersons.add(new Person("Tom", 11) {{
+            hobbies.add(swimming);
+            hobbies.add(surfing);
+        }});
+
+        // Fill hash map
+        HashMap<Person, List<Hobby>> map = new HashMap<>();
+        for (Person person : setOfPersons)
+            map.put(person, person.hobbies);
+
+        // Iterate this map
+        for (Map.Entry<Person, List<Hobby>> entry : map.entrySet()) {
+            Person person = entry.getKey();
+            List<Hobby> hobbies = entry.getValue();
+
+            for (Hobby hobby : hobbies)
+                System.out.println(person.getName() + " have a hobby: " + hobby.name + " at the following " + hobby.adress);
+        }
     }
+}
+
+
+
 
 
