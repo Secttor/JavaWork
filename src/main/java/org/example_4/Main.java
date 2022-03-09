@@ -25,7 +25,7 @@ public class Main {
         Adress address2 = new Adress("France", "Europe", "Lyon", 1234);
         Adress address3 = new Adress("Germany", "Europe", "Frankfurt", 8475);
 
-        Hobby swimming = new Hobby("swiming", 5, address1);
+        Hobby swimming = new Hobby("swimming", 5, address1);
         Hobby surfing = new Hobby("surfing", 3, address2);
         Hobby running = new Hobby("running", 3, address3);
 

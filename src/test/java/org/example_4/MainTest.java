@@ -17,4 +17,17 @@ class MainTest {
         assertEquals(20, p.getAge(), "Age not matching");
     }
 
+    @Test
+    public void testAdress() {
+        Adress adress = new Adress("Belgium", "Europe", "Bruxelles", 12);
+        assertEquals("Belgium", adress.country, "Country not matching");
+    }
+
+    @Test
+    public void testHobby() {
+        Hobby hobby = new Hobby("swimming", 5, new Adress("Belgium", "Europe", "Bruxelles", 12));
+        assertEquals("swimming", "swimming", "Hobby not matching");
+
+    }
+
 }
