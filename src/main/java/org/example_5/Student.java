@@ -59,7 +59,7 @@ public class Student {
     @Override
     public String toString() {
         return
-                "Student FirstName - " + FirstName + " + LastName - " + LastName + " + Gender - " + Gender + " + DateOfBirth - " + DateOfBirth + " & ID - " + ID;
+                "Student FirstName - " + FirstName + " , LastName - " + LastName + " , Gender - " + Gender + " , DateOfBirth - " + DateOfBirth + " & ID - " + ID;
 
     }
 }
