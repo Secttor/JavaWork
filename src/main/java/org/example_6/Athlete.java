@@ -1,9 +1,5 @@
 package org.example_6;
 
-/**
- * Additional class for Comparable
- */
-
 public class Athlete implements Comparable<Athlete> {
 
 

@@ -24,7 +24,7 @@ public class CSVConclusions {
 
     }
 
-    public ArrayList<AthleteWork> doCSV() {
+    public static ArrayList<AthleteWork> doCSV() {
         ArrayList<AthleteWork> athletes = new ArrayList<>();
         String path = "C:\\Programming\\CSV.csv";                   //path of CSV file
         String line = "";                                           //variable for..nothing
