@@ -14,7 +14,14 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+
+            <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.3.3</version>
+            </dependency>
+        </dependencies>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
