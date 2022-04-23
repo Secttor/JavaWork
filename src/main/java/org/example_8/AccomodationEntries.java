@@ -1,17 +1,19 @@
 package org.example_8;
 
+/** Class to define the constructor, getters & toString for Accomodation
+ */
 public class AccomodationEntries {
     private int id;
     private String type;
     private String bed_type;
-    private int max_quest;
+    private int max_quests;
     private String description;
 
-    public AccomodationEntries(int id, String type, String bed_type, int max_quest, String description) {
+    public AccomodationEntries(int id, String type, String bed_type, int max_quests, String description) {
         this.id = id;
         this.type = type;
         this.bed_type = bed_type;
-        this.max_quest = max_quest;
+        this.max_quests = max_quests;
         this.description = description;
     }
 
@@ -27,8 +29,8 @@ public class AccomodationEntries {
         return bed_type;
     }
 
-    public int getMax_quest() {
-        return max_quest;
+    public int getmax_quest() {
+        return max_quests;
     }
 
     public String getDescription() {
@@ -37,6 +39,6 @@ public class AccomodationEntries {
 
     @Override
     public String toString() {
-        return (String.format("%s | %s | %s | %s | %s", id, type, bed_type,max_quest,description));
+        return (String.format("%s | %s | %s | %s | %s", id, type, bed_type,max_quests,description));
     }
 }

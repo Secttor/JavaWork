@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/** Main class with driver loading & reply from DB
+ */
 
 public class Booking {
     public static void main(String[] args) {
@@ -18,7 +20,7 @@ public class Booking {
         try (Statement query =  connection.createStatement()){
             ResultSet reply = query.executeQuery("SELECT * FROM accomodation");
             while(reply.next()){
-                id = (int) reply.getObject("id");
+                id = (int) reply.getInt("id");
                 String type = reply.getString("type");
                 String bed_type = reply.getString("bed_type");
                 Integer max_guests = reply.getInt("max_guests");
@@ -30,8 +32,8 @@ public class Booking {
             sqlException.printStackTrace();
         }
 
-        AccomodationEntries entries = new AccomodationEntries(01, "something","something2",12,"common");
+        AccomodationEntries entries = new AccomodationEntries(01, "spacious","large", 5,"common");
         functions.updateBooking(entries);
-        System.out.println(entries.getId()+entries.getType()+entries.getBed_type()+entries.getMax_quest()+entries.getDescription());
+        System.out.println(entries.getId()+entries.getType()+entries.getBed_type()+entries.getmax_quest()+entries.getDescription());
     }
 }

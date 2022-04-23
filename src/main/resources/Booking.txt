@@ -1,0 +1,28 @@
+CREATE TABLE accomodation (
+	id  int,
+	type character varying(32),
+	bed_type character varying(32),
+	max_guests integer,
+	description varchar(512),
+	PRIMARY KEY (id)
+)
+
+CREATE TABLE room_fair (
+	id  int,
+	value double,
+	season varchar(32),
+	PRIMARY KEY (id)
+)
+
+CREATE TABLE accomodation_fair_relation (
+	id  int,
+	id_accomodation integer,
+	id_room_fair integer,
+	PRIMARY KEY (id),
+	FOREIGN KEY(id_accomodation) REFERENCES accomodation(id),
+	FOREIGN KEY(id_room_fair) REFERENCES room_fair(id)
+)
+
+SELECT * FROM accomodation
+SELECT * FROM room_fair
+SELECT * FROM accomodation_fair_relation

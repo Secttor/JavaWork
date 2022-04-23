@@ -1,5 +1,7 @@
 package org.example_8;
 
+/** Class to define the constructor, getters & toString for RoomFair
+ */
 public class RoomFairEntries {
     private int id;
     private double value;

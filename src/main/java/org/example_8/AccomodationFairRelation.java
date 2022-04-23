@@ -1,5 +1,7 @@
 package org.example_8;
 
+/** Class to define the constructor, getters & toString for AccomodationFairRelation
+ */
 public class AccomodationFairRelation {
     private int id;
     private int id_accomodation;
