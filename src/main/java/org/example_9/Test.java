@@ -24,7 +24,7 @@ import java.util.Comparator;
                         try {
                             Files.write(
                                     Paths.get("FinalFile.txt"),
-                                    Collections.singleton(String.join(" --", parts)),
+                                    Collections.singleton(String.join(",", parts)),
                                     StandardOpenOption.APPEND, StandardOpenOption.CREATE
                             );
                         } catch (Exception ignored) {}

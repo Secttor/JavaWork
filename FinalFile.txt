@@ -1,2 +1,2 @@
-name2 -- surname2
-name4 -- surname4
+name2,surname2
+name4,surname4
